@@ -45,11 +45,6 @@ variable "bucket_error" {
   default     = "error"
 }
 
-variable "glue_job_name" {
-  type        = string
-  default     = "test-payment-job"
-}
-
 variable "glue_database_name" {
   type        = string
   default     = "playground"
@@ -65,6 +60,11 @@ variable "glue_crawler_name" {
   default     = "test-payment-crawler"
 }
 
+variable "glue_worker_standard" {
+  type        = string
+  default     = "Standard"
+}
+
 variable "glue_workers_default" {
   type        = number
   default     = 2
@@ -73,6 +73,16 @@ variable "glue_workers_default" {
 variable "glue_retries_default" {
   type        = number
   default     = 1
+}
+
+variable "glue_timeout_default" {
+  type        = number
+  default     = 20
+}
+
+variable "glue_etl" {
+  type        = string
+  default     = "glueetl"
 }
 
 variable "python_version_default" {
